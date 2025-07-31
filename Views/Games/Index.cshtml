@@ -3,5 +3,16 @@
 }
 
 <h2>Available Games</h2>
-
-<p>Hello from our View Template!</p>
+<div class="game-list">
+    <ul>
+        @foreach (var game in ViewData["Games"] as List<IGame>)
+        {
+            <li>
+                <div class="card">
+                    <h4>@game.Name</h4>
+                    <p>@game.Description</p>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
